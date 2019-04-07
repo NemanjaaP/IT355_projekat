@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" th:href="@{/css/index.css}"/>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div th:include="fragments/navbar::navbar"></div>
+
+        <div id="page-content">
+            <div class="container">
+                <br/><br/>
+                <!-- Page Heading -->
+                <h1 class="my-4">Items
+                    <small>Secondary Text</small>
+                </h1>
+
+                <div class="row" >
+                    <div   th:each="tempItem : ${items}"class="col-sm-3 mb-4">
+
+                        <div class="card h-100">
+                            <a th:href="@{/item/showItem(itemId=${tempItem.id})}"><img class="card-img-top" th:src="@{${tempItem.photoPath}}" alt=""></a>
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <a href="#" th:text="${tempItem.name}">Project One</a>
+                                </h4>
+                                <p class="card-text" th:text="${tempItem.description}"/>
+                                <p class="card-text" th:text="${tempItem.price}" th:remove="tag"> Price </p>
+                            </div>
+
+                            <div style="text-align: center; margin-top: 2px;">
+                                <a th:href="@{/admin/deleteItem(itemId=${tempItem.id})}"
+                                   sec:authorize="isAuthenticated() && hasRole('ADMIN')"
+                                   class="btn btn-danger btn-md col-sm-6 "> 
+                                    Delete
+                                </a>
+
+                                <a th:href="@{/admin/showFormForUpdate(itemId=${tempItem.id})}" 
+                                   sec:authorize="isAuthenticated() && hasRole('ADMIN')"
+                                   class="btn btn-info btn-md col-sm-5"> 
+                                    Update
+                                </a>
+                            </div>
+
+                            <div style="text-align: center; margin-top: 2px;">
+                                <a th:href="@{/users/items/add(itemId=${tempItem.id})}"
+                                   sec:authorize="isAuthenticated() && hasRole('USER')"
+                                   class="btn btn-danger btn-md col-sm-6 "> 
+                                    Shop
+                                </a>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <!-- /.row -->
+
+                <!-- Pagination -->
+                <ul class="pagination justify-content-center">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">1</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">2</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">3</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+            <!-- /.container -->
+        </div>
+
+        <div th:include="fragments/footer::footer">
+
+        </div>    
+    </body>
+</html>

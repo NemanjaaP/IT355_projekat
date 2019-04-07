@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+    <head>
+        <title>Register</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" th:href="@{/css/register.css}"/>
+        <link rel="stylesheet" th:href="@{/css/index.css}"/>
+
+
+    </head>
+    <body class="d-flex flex-column">
+        <div th:include="fragments/navbar::navbar"></div>
+
+        <div class="wrapper" id="register-form">
+            <form class="form-signin" th:action="@{/user/save}"
+                  th:object="${user}" method="POST">       
+                <h2 class="form-signin-heading">Register</h2>
+                <br/>
+
+                <input type="text" class="form-control" th:field="*{firstName}" placeholder="First name" required="true" autofocus="" />
+                <td th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">Name Error</td>
+
+                <br/>
+                <input type="text" class="form-control" th:field="*{lastName}" placeholder="Last name" required="true" autofocus="" />
+                <br/>
+
+                <input type="text" class="form-control" th:field="*{username}" placeholder="Username" required="true" autofocus="" />
+                <td th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Username Error</td>
+
+                <br/>
+
+                <input type="text" class="form-control" th:field="*{email}" placeholder="E-mail" required="true" autofocus="" />
+                <br/>
+
+                <input type="password" class="form-control" th:field="*{password}" placeholder="Password" required="true"/> 
+                <br/>
+
+                <select class="form-control" th:field="*{city}"  id="dropOperator">
+                    <option value="0">Choose city</option>
+                    <option  th:each="tempCity : ${cities}" th:value="${tempCity.id}" th:text="${tempCity.name}"></option>
+                </select>
+                <br/>
+                <label class="checkbox">
+                    <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
+                </label>                <br/>
+                <br/>
+
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>   
+            </form>
+        </div>
+        <br/>  
+
+
+
+        <div th:fragment="footer">
+            <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+                <div class="container text-center">
+                    <small>Copyright &copy; Your Website</small>
+                </div>
+            </footer>
+        </div>
+        <!-- <div th:include="fragments/footer::footer"></div>-->
+
+    </body>
+</html>

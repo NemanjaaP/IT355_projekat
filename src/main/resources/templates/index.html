@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+
+    <head>
+        <title>Home</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" media="all"  th:href="@{/css/index.css}" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+
+        <div th:include="fragments/navbar::navbar"></div>
+        <br/><br/>   
+
+        <header>
+            <div class="overlay"></div>
+            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+                <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
+            </video>
+            <div class="container h-100">
+                <div class="d-flex h-100 text-center align-items-center">
+                    <div class="w-100 text-white">
+                        <h5 class="display-4">"It is not the mountain we conquer but ourselves."</h5>
+                        <h2 class="lead mb-0">Edmund Hillary</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="info-section">
+            <div class="container">
+                <div class="head-box text-center mb-5">
+                    <h2>Our service</h2>
+                    <h6 class="text-underline-primary">Let it snow!</h6>
+                </div>
+                <div class="three-panel-block mt-5">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="service-block-overlay text-center mb-5 p-lg-3">
+                                <i class="fa fa-shield box-circle-solid mt-3 mb-3" aria-hidden="true"></i>
+                                <h3>Protection</h3>
+                                <p class="px-4">Protect yourself with the best ski equipment there is - don't worry anymore about your safety while skiing.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="service-block-overlay text-center mb-5 p-lg-3">
+                                <i class="fa fa-truck box-circle-solid mt-3 mb-3" aria-hidden="true"></i>
+                                <h3>Delivery</h3>
+                                <p class="px-4">Order today, and you will be ready tomorrow for your trip!</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="service-block-overlay text-center p-lg-3">
+                                <i class="fa fa-comments box-circle-solid mt-3 mb-3" aria-hidden="true"></i>
+                                <h3>24/7 Support</h3>
+                                <p class="px-4">If you have any question or need help you can call us or contact us via mail. We are at your disposal all the time!</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="service-block-overlay text-center p-lg-3">
+                                <i class="fa fa-cloud-upload box-circle-solid mt-3 mb-3" aria-hidden="true"></i>
+                                <h3>Cloud Storage</h3>
+                                <p class="px-4">Never in all their history have men been able truly to conceive of the world as one a single sphere</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="service-block-overlay text-center p-lg-3">
+                                <i class="fa fa-diamond box-circle-solid mt-3 mb-3" aria-hidden="true"></i>
+                                <h3>Premium Features</h3>
+                                <p class="px-4">Never in all their history have men been able truly to conceive of the world as one a single sphere</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="service-block-overlay text-center p-lg-3">
+                                <i class="fa fa-diamond box-circle-solid mt-3 mb-3" aria-hidden="true"></i>
+                                <h3>Premium Features</h3>
+                                <p class="px-4">Never in all their history have men been able truly to conceive of the world as one a single sphere</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="info-section bg-primary py-0">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-lg-6 content-half mt-md-0 pl-5 pt-4" style="background-color: #33adff;">
+                        <div class="head-box mb-5 pl-5 mt-2">
+                            <h2 class="text-white">Our Story</h2>
+                            <h6 class="text-white text-underline-rb-white">This is information panel</h6>
+                        </div>
+                        <ul class="pl-5">
+                            <li>
+                                <i class="fa fa-laptop box-round-outline" aria-hidden="true"></i>
+                                <span class="list-content">
+                                    <strong>Responsive Design</strong>
+                                    <br>Eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </span>
+                            </li>
+                            <li>
+                                <i class="fa fa-cloud-upload box-round-outline" aria-hidden="true"></i>
+                                <span class="list-content">
+                                    <strong>Cloud Storage</strong>
+                                    <br>Eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </span>
+                            </li>
+                            <li>
+                                <i class="fa fa-diamond box-round-outline" aria-hidden="true"></i>
+                                <span class="list-content">
+                                    <strong>Premium Features</strong>
+                                    <br>Eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 p-0 m-0">
+                        <img src="img/view1.jpg" class="img-fluid">
+                    </div>
+                </div>
+        </section>
+
+
+        <section class="team-section py-10">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="head-box text-center mb-5 col-md-12">
+                        <h2>View our gallery</h2>
+                    </div>
+
+                    <div class="col-md-4 mb-md-0 mb-sm-4">
+                        <a th:href="@{/itemsList(productTypeId=1)}">
+                            <div class="member-box anim-lf t-bottom">
+                                <img class="img-fluid" src="img/skis2.jpg" alt="">
+                                <div class="overlay-content">
+                                    <h3 class="text-white ml-3 my-0">Skis</h3>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 mb-md-0 mb-sm-4">
+                        <a th:href="@{/itemsList(productTypeId=2)}">
+
+                            <div class="member-box anim-lf t-bottom">
+                                <img class="img-fluid" th:src="@{img/skiwear.jpg}" alt="" >
+                                <div class="overlay-content">
+                                    <h3 class="text-white ml-3 my-0">Clothes</h3>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 mb-md-0 mb-sm-4">
+                        <a th:href="@{/itemsList(productTypeId=3)}">
+
+                            <div class="member-box anim-lf t-bottom">
+                                <img class="img-fluid" src="img/protection.jpg" alt="">
+                                <div class="overlay-content">
+                                    <h3 class="text-white ml-3 my-0">Protection</h3>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+
+        <hr id="separator">
+
+
+        <section class="page-section" id="contact">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="mt-0">Let's Get In Touch!</h2>
+                        <hr class="divider my-4">
+                        <p class="text-muted mb-5" style="color: red;">Have any question? Give us a call or send us an email and we will get back to you as soon as possible!</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 ml-auto text-center">
+                        <i class="fa fa-phone fa-3x mb-3 text-muted"></i>
+                        <div>+1 (202) 555-0149</div>
+                    </div>
+                    <div class="col-lg-4 mr-auto text-center">
+                        <i class="fa fa-envelope fa-3x mb-3 text-muted"></i>
+                        <!-- Make sure to change the email address in anchor text AND the link below! -->
+                        <a class="d-block" href="mailto:contact@yourwebsite.com">it355@project.com</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+        <!--FOOTER-->
+        <div th:include="fragments/footer::footer"></div>
+
+
+    </body>
+</html>
